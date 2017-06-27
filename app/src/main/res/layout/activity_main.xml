@@ -9,11 +9,20 @@
     tools:context="com.dimka.tabsbus.MainActivity">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+         />
+
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center"
+        android:layout_gravity="top|center"
         android:layout_weight="1"
         android:foregroundGravity="center">
 
@@ -23,6 +32,7 @@
             android:layout_height="fill_parent"
             android:background="#FFFFFF"
             android:orientation="vertical">
+
 
             <TabHost
                 android:id="@android:id/tabhost"
@@ -60,6 +70,7 @@
                                 android:gravity="center"
                                 android:text="text_tab2" />
 
+
                         </FrameLayout>
                     </ScrollView>
 
@@ -79,6 +90,7 @@
 
     </FrameLayout>
 
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -86,7 +98,7 @@
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@color/colorPrimary2"
         style="@style/Widget.Design.BottomNavigationView"
         app:itemIconTint="@drawable/nav_color_menu"
         app:itemTextColor="@drawable/nav_color_menu" />

@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,7 +26,10 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.Badgeable;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.Nameable;
+import com.mikepenz.materialdrawer.util.DrawerItemViewHelper;
 
 public class MainActivity extends AppCompatActivity {
     private Drawer.Result drawerResult;
@@ -160,17 +164,56 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem()
                                 .withName(R.string.title_home)
                                 .withIdentifier(1),
+
                         new DividerDrawerItem(),
                         new SecondaryDrawerItem()
                                 .withName(R.string.app_name)
 
                 )
+
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
-                        Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                        startActivity(intent);
+
+                        if (drawerItem instanceof Nameable) {
+//                            Toast.makeText(MainActivity.this,MainActivity.this.getString(((Nameable) drawerItem).getNameRes()), Toast.LENGTH_SHORT).show();
+
+                            switch (MainActivity.this.getString(((Nameable) drawerItem).getNameRes())){
+                                case "Home":
+                                    Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                                    startActivity(intent);
+                                    break;
+                                case "TabsBus":
+                                    Toast.makeText(MainActivity.this, "vtoraya", Toast.LENGTH_SHORT).show();
+                                    break;
+
+
+                            }
+
+
+                        }
+                        if (drawerItem instanceof Badgeable) {
+                            Badgeable badgeable = (Badgeable) drawerItem;
+                            if (badgeable.getBadge() != null) {
+                                // учтите, не делайте так, если ваш бейдж содержит символ "+"
+                                try {
+                                    int badge = Integer.valueOf(badgeable.getBadge());
+                                    if (badge > 0) {
+                                        drawerResult.updateBadge(String.valueOf(badge - 1), position);
+                                    }
+                                } catch (Exception e) {
+                                    Log.d("test", "Не нажимайте на бейдж, содержащий плюс! :)");
+                                }
+                            }
+                        }
                     }
+
+
+
+
+//                        Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+//                        startActivity(intent);
+
                 })
                 .build();
     }

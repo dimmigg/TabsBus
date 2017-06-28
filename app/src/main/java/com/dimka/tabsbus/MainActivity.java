@@ -1,10 +1,15 @@
 package com.dimka.tabsbus;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.TabHost.OnTabChangeListener;
@@ -20,11 +25,14 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 public class MainActivity extends AppCompatActivity {
     private Drawer.Result drawerResult;
     private TextView mTextTab1;
     private TextView mTextTab2;
+    TextView tvInfo;
+    SharedPreferences sp;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -75,12 +83,15 @@ public class MainActivity extends AppCompatActivity {
 
         initializeNavigationDrawer(toolbar);
 
-//        if (drawerResult.isDrawerOpen())
+
+        //настройки
+        tvInfo = (TextView) findViewById(R.id.tvInfo);
+
+        // получаем SharedPreferences, которое работает с файлом настроек
+        sp = PreferenceManager.getDefaultSharedPreferences(this);
 
 
-
-
-
+        //табы
 
         TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
         // инициализация
@@ -138,17 +149,47 @@ public class MainActivity extends AppCompatActivity {
                 .withActionBarDrawerToggleAnimated(true)
 //                .withHeader(R.layout.drawer_header)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(FontAwesome.Icon.faw_home).withBadge("99").withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_free_play).withIcon(FontAwesome.Icon.faw_gamepad),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIcon(FontAwesome.Icon.faw_eye).withBadge("6").withIdentifier(2),
-                        new SectionDrawerItem().withName(R.string.drawer_item_settings),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_cog),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_question).setEnabled(false),
+//                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(FontAwesome.Icon.faw_home).withBadge("99").withIdentifier(1),
+//                        new PrimaryDrawerItem().withName(R.string.drawer_item_free_play).withIcon(FontAwesome.Icon.faw_gamepad),
+//                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIcon(FontAwesome.Icon.faw_eye).withBadge("6").withIdentifier(2),
+//                        new SectionDrawerItem().withName(R.string.drawer_item_settings),
+//                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_cog),
+//                        new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_question).setEnabled(false),
+//                        new DividerDrawerItem(),
+//                        new SecondaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(FontAwesome.Icon.faw_github).withBadge("12+").withIdentifier(1)
+                        new PrimaryDrawerItem()
+                                .withName(R.string.title_home)
+                                .withIdentifier(1),
                         new DividerDrawerItem(),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(FontAwesome.Icon.faw_github).withBadge("12+").withIdentifier(1)
+                        new SecondaryDrawerItem()
+                                .withName(R.string.app_name)
+
                 )
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
+                        Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                        startActivity(intent);
+                    }
+                })
                 .build();
     }
+
+    protected void onResume() {
+        Boolean notif = sp.getBoolean("notif", false);
+        String address = sp.getString("address", "");
+        String text = "Notifications are "
+                + ((notif) ? "enabled, address = " + address : "disabled");
+        tvInfo.setText(text);
+        super.onResume();
+    }
+
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuItem mi = menu.add(0, 1, 0, "Preferences");
+//        mi.setIntent(Intent intent = new Intent(this, PrefActivity.class));
+//        startActivity(intent);
+//        return super.onCreateOptionsMenu(menu);
+//    }
 
 
 }

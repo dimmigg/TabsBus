@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppThemeDark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBoxPreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="notif"
+        android:summary="Enable notifications"
+        android:textColor="#000000"
+        android:title="Notifications" />
+
+    <EditTextPreference
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="address"
+        android:summary="Address for notifications"
+        android:textColor="#000000"
+        android:title="Address" />
+</PreferenceScreen>

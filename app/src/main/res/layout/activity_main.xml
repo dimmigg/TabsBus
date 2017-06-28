@@ -15,8 +15,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        android:minHeight="?attr/actionBarSize"
-         />
+        android:minHeight="?attr/actionBarSize" />
 
     <FrameLayout
         android:id="@+id/content"
@@ -32,6 +31,12 @@
             android:layout_height="fill_parent"
             android:background="#FFFFFF"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""></TextView>
 
 
             <TabHost
@@ -79,7 +84,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/colorPrimary"
-                        android:elevation="4dp">
+                        android:elevation="4dp"
+                        >
 
                     </TabWidget>
 
@@ -93,14 +99,15 @@
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
+        style="@style/Widget.Design.BottomNavigationView"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/navigation"
         app:itemBackground="@color/colorPrimary2"
-        style="@style/Widget.Design.BottomNavigationView"
         app:itemIconTint="@drawable/nav_color_menu"
-        app:itemTextColor="@drawable/nav_color_menu" />
+        app:itemTextColor="@drawable/nav_color_menu"
+        app:menu="@menu/navigation"/>
 
 </LinearLayout>

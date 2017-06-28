@@ -6,7 +6,21 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
+        <item name="android:textColorSecondaryInverse">@color/hint_text</item>
+        <item name="android:textColorSecondary">@color/colorBlack</item>
     </style>
+
+    <style name="AppThemeDark" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorAccent">@color/colorAccentDark</item>
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+
+
+    </style>
+
 
 </resources>

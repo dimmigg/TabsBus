@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        setTitle(R.string.toolBar_136pos);
         //боковое меню
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -128,11 +128,11 @@ public class MainActivity extends AppCompatActivity {
         tabHost.setCurrentTabByTag("tag1");
 
         // обработчик переключения вкладок
-        tabHost.setOnTabChangedListener(new OnTabChangeListener() {
-            public void onTabChanged(String tabId) {
-                Toast.makeText(getBaseContext(), "tabId = " + tabId, Toast.LENGTH_SHORT).show();
-            }
-        });
+//        tabHost.setOnTabChangedListener(new OnTabChangeListener() {
+//            public void onTabChanged(String tabId) {
+//                Toast.makeText(getBaseContext(), "tabId = " + tabId, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
         mTextTab1 = (TextView) findViewById(R.id.tvTab1);
@@ -189,8 +189,10 @@ public class MainActivity extends AppCompatActivity {
                                 case 1:
                                     Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                                     startActivity(intent);
+                                    break;
                                 case 2:
                                     Toast.makeText(MainActivity.this, "tiknul 2!!", Toast.LENGTH_SHORT).show();
+                                    break;
 
                             }
 
@@ -220,9 +222,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onResume() {
-        String listValue = sp.getString("list", "не выбрано");
-        tvInfo.setText("Значение списка - " + listValue);
         super.onResume();
+        int toolBarTextSize = Integer.parseInt(sp.getString("list", "1"));
+        if (toolBarTextSize != 1){
+            mTextTab1.setTextSize(toolBarTextSize);
+            mTextTab2.setTextSize(toolBarTextSize);
+        }else {
+            mTextTab1.setTextSize(14);
+            mTextTab2.setTextSize(14);
+        }
     }
 
 //    public boolean onCreateOptionsMenu(Menu menu) {

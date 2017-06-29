@@ -65,7 +65,7 @@
                                 android:id="@+id/tvTab1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="text_tab1"
+                                android:text="@string/TextTime136pos"
                                 android:textAlignment="center" />
 
                             <TextView
@@ -73,7 +73,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="text_tab2" />
+                                android:text="@string/TextTime136posVih" />
 
 
                         </FrameLayout>

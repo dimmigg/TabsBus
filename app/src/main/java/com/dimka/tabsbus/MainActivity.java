@@ -8,13 +8,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.TabHost.OnTabChangeListener;
 import android.widget.Toast;
 
 import android.support.v7.widget.Toolbar;
@@ -22,13 +20,7 @@ import android.support.v7.widget.Toolbar;
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SectionDrawerItem;
-import com.mikepenz.materialdrawer.model.SwitchDrawerItem;
-import com.mikepenz.materialdrawer.model.ToggleDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Badgeable;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
@@ -57,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     mTextTab1.setText(R.string.TextTime176);
                     mTextTab2.setText("в воскресенье другое расписание. Найдёшь - скажи =)");
                     return true;
-                case R.id.navigation_157pos:
+                case R.id.navigation_114:
                     setTitle(R.string.toolBar_114);
                     mTextTab1.setText(R.string.TextTime114);
                     mTextTab2.setText(R.string.TextTime114Vih);

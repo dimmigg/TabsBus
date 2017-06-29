@@ -4,25 +4,25 @@
     <item
         android:id="@+id/navigation_136pos"
         android:enabled="true"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_136_96dp2"
         android:title="@string/btnMenuPos" />
 
     <item
-        android:id="@+id/navigation_157pos"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:id="@+id/navigation_114"
+        android:icon="@drawable/ic_114_96dp"
         android:title="@string/btnMenuCkh" />
     <item
         android:id="@+id/navigation_176"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_176_96dp"
         android:title="@string/btnMenuPosTec" />
 
     <item
         android:id="@+id/navigation_136kmr"
-        android:icon="@drawable/ic_136_96dp"
+        android:icon="@drawable/ic_136_96dp2"
         android:title="@string/btnMenuKmr" />
     <item
         android:id="@+id/navigation_157kmr"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_157_96dp"
         android:title="@string/btnMenuKmr" />
 
 </menu>

@@ -19,10 +19,16 @@ import android.widget.Toast;
 
 import android.support.v7.widget.Toolbar;
 
+import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SectionDrawerItem;
+import com.mikepenz.materialdrawer.model.SwitchDrawerItem;
+import com.mikepenz.materialdrawer.model.ToggleDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Badgeable;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
@@ -41,25 +47,30 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_136pos:
-                    setTitle(R.string.title_home);
-                    mTextTab1.setText("home");
-                    mTextTab2.setText("home");
+                    setTitle(R.string.toolBar_136pos);
+                    mTextTab1.setText(R.string.TextTime136pos);
+                    mTextTab2.setText(R.string.TextTime136posVih);
+
                     return true;
                 case R.id.navigation_176:
-                    mTextTab1.setText("dashboard");
-                    mTextTab2.setText("dashboard 2");
+                    setTitle(R.string.toolBar_176);
+                    mTextTab1.setText(R.string.TextTime176);
+                    mTextTab2.setText("в воскресенье другое расписание. Найдёшь - скажи =)");
                     return true;
                 case R.id.navigation_157pos:
-                    mTextTab1.setText("notifications");
-                    mTextTab2.setText("notifications 2");
+                    setTitle(R.string.toolBar_114);
+                    mTextTab1.setText(R.string.TextTime114);
+                    mTextTab2.setText(R.string.TextTime114Vih);
                     return true;
                 case R.id.navigation_136kmr:
-                    mTextTab1.setText("notifications");
-                    mTextTab2.setText("notifications 2");
+                    setTitle(R.string.toolBar_136kmr);
+                    mTextTab1.setText(R.string.TextTime136kmr);
+                    mTextTab2.setText(R.string.TextTime136posVih);
                     return true;
                 case R.id.navigation_157kmr:
-                    mTextTab1.setText("notifications");
-                    mTextTab2.setText("notifications 2");
+                    setTitle(R.string.toolBar_157kmr);
+                    mTextTab1.setText(R.string.TextTime157kmr);
+                    mTextTab2.setText(R.string.TextTime136posVih);
                     return true;
 //                case R.id.navigation_114:
 //                    mTextTab1.setText("notifications");
@@ -82,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initializeNavigationDrawer(toolbar);
-
 
         //настройки
         tvInfo = (TextView) findViewById(R.id.tvInfo);
@@ -136,8 +146,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (drawerResult != null && drawerResult.isDrawerOpen()) {
             drawerResult.closeDrawer();
-        }else{
-        super.onBackPressed();}
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void initializeNavigationDrawer(Toolbar toolbar) {
@@ -157,14 +168,16 @@ public class MainActivity extends AppCompatActivity {
 //                        new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_question).setEnabled(false),
 //                        new DividerDrawerItem(),
 //                        new SecondaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(FontAwesome.Icon.faw_github).withBadge("12+").withIdentifier(1)
-                        new PrimaryDrawerItem()
+//                        new PrimaryDrawerItem()
+                        new SecondaryDrawerItem()
                                 .withName(R.string.setting)
+                                .withIcon(FontAwesome.Icon.faw_gear)
                                 .withIdentifier(1),
-
                         new DividerDrawerItem(),
                         new SecondaryDrawerItem()
-                                .withName(R.string.app_name)
-
+                                .withName(R.string.aboutTheProgram)
+                                .withIcon(FontAwesome.Icon.faw_info_circle)
+                                .withIdentifier(2)
                 )
 
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -172,20 +185,14 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
 
                         if (drawerItem instanceof Nameable) {
-//                            Toast.makeText(MainActivity.this,MainActivity.this.getString(((Nameable) drawerItem).getNameRes()), Toast.LENGTH_SHORT).show();
-
-                            switch (MainActivity.this.getString(((Nameable) drawerItem).getNameRes())){
-                                case "Настройка":
+                            switch (drawerItem.getIdentifier()) {
+                                case 1:
                                     Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                                     startActivity(intent);
-                                    break;
-                                case "TabsBus":
-                                    Toast.makeText(MainActivity.this, "vtoraya", Toast.LENGTH_SHORT).show();
-                                    break;
-
+                                case 2:
+                                    Toast.makeText(MainActivity.this, "tiknul 2!!", Toast.LENGTH_SHORT).show();
 
                             }
-
 
                         }
                         if (drawerItem instanceof Badgeable) {
@@ -203,8 +210,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     }
-
-
 
 
 //                        Intent intent = new Intent(MainActivity.this, SettingActivity.class);

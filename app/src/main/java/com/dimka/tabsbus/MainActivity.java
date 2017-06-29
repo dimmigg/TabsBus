@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     break;
                                 case 2:
-                                    Toast.makeText(MainActivity.this, "tiknul 2!!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, R.string.aboutTheProgramToast , Toast.LENGTH_LONG).show();
                                     break;
 
                             }

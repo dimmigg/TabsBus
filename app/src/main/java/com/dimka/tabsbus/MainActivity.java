@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
+
+                @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
             switch (item.getItemId()) {
                 case R.id.navigation_136pos:
                     setTitle(R.string.toolBar_136pos);
@@ -78,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle(R.string.toolBar_136pos);
+//        mTextTab1.setText(R.string.TextTime136kmr);
+        setTitle(R.string.toolBar_136kmr);
         //боковое меню
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -131,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         mTextTab2 = (TextView) findViewById(R.id.tvTab2);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_136pos);
     }
 
     @Override

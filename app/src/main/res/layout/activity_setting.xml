@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <CheckBoxPreference
         android:key="chb"
         android:summary="Description of checkbox"
-        android:title="Checkbox"/>
+        android:title="Checkbox" />
+
     <ListPreference
         android:entries="@array/setArrTextSize"
         android:entryValues="@array/setArrTextSize"
         android:key="list"
         android:summary="@string/setTextSizeSum"
-        android:title="@string/setTextSize"/>
-
+        android:title="@string/setTextSize" />
 </PreferenceScreen>

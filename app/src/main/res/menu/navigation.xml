@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/navigation_136pos"
-        android:enabled="true"
-        android:icon="@drawable/ic_136_96dp2"
-        android:title="@string/btnMenuPos" />
-
-    <item
-        android:id="@+id/navigation_114"
-        android:icon="@drawable/ic_114_96dp"
-        android:title="@string/btnMenuCkh" />
-    <item
-        android:id="@+id/navigation_176"
-        android:icon="@drawable/ic_176_96dp"
-        android:title="@string/btnMenuPosTec" />
-
     <item
         android:id="@+id/navigation_136kmr"
         android:icon="@drawable/ic_136_96dp2"
@@ -24,5 +8,17 @@
         android:id="@+id/navigation_157kmr"
         android:icon="@drawable/ic_157_96dp"
         android:title="@string/btnMenuKmr" />
-
+    <item
+        android:id="@+id/navigation_176"
+        android:icon="@drawable/ic_176_96dp"
+        android:title="@string/btnMenuPosTec" />
+    <item
+        android:id="@+id/navigation_136pos"
+        android:enabled="true"
+        android:icon="@drawable/ic_136_96dp2"
+        android:title="@string/btnMenuPos" />
+    <item
+        android:id="@+id/navigation_114"
+        android:icon="@drawable/ic_114_96dp"
+        android:title="@string/btnMenuCkh" />
 </menu>

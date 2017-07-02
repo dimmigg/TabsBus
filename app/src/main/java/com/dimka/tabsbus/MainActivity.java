@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
 
-                @Override
+        @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
             switch (item.getItemId()) {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_176:
                     setTitle(R.string.toolBar_176);
                     mTextTab1.setText(R.string.TextTime176);
-                    mTextTab2.setText("в воскресенье другое расписание. Найдёшь - скажи =)");
+                    mTextTab2.setText(R.string.TextTime176Vih);
                     return true;
                 case R.id.navigation_114:
                     setTitle(R.string.toolBar_114);
@@ -59,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_136kmr:
                     setTitle(R.string.toolBar_136kmr);
                     mTextTab1.setText(R.string.TextTime136kmr);
-                    mTextTab2.setText(R.string.TextTime136posVih);
+                    mTextTab2.setText(R.string.TextTime136kmrVih);
                     return true;
                 case R.id.navigation_157kmr:
                     setTitle(R.string.toolBar_157kmr);
                     mTextTab1.setText(R.string.TextTime157kmr);
-                    mTextTab2.setText(R.string.TextTime136posVih);
+                    mTextTab2.setText(R.string.TextTime157kmrVih);
                     return true;
 //                case R.id.navigation_114:
 //                    mTextTab1.setText("notifications");
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     break;
                                 case 2:
-                                    Toast.makeText(MainActivity.this, R.string.aboutTheProgramToast , Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, R.string.aboutTheProgramToast, Toast.LENGTH_LONG).show();
                                     break;
 
                             }
@@ -220,10 +220,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         int toolBarTextSize = Integer.parseInt(sp.getString("list", "1"));
-        if (toolBarTextSize != 1){
+        if (toolBarTextSize != 1) {
             mTextTab1.setTextSize(toolBarTextSize);
             mTextTab2.setTextSize(toolBarTextSize);
-        }else {
+        } else {
             mTextTab1.setTextSize(14);
             mTextTab2.setTextSize(14);
         }

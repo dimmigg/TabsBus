@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Badgeable;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
@@ -151,10 +152,20 @@ public class MainActivity extends AppCompatActivity {
         drawerResult = new Drawer()
                 .withActivity(this)
                 .withToolbar(toolbar)
-                .withDisplayBelowToolbar(true)
                 .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)
+                .withTranslucentStatusBar(false)
+                .withTranslucentActionBarCompatibility(false)
+                .withDrawerWidthPx(650)
+//                .withDisplayBelowToolbar(true)
+
+
+//                .withTranslucentNavigationBarProgrammatically(true)
+
+//                .setTranslucentStatusFlag(true)
+
 //                .withHeader(R.layout.drawer_header)
+                .withSelectedItem(-1)
                 .addDrawerItems(
 //                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(FontAwesome.Icon.faw_home).withBadge("99").withIdentifier(1),
 //                        new PrimaryDrawerItem().withName(R.string.drawer_item_free_play).withIcon(FontAwesome.Icon.faw_gamepad),
@@ -165,12 +176,13 @@ public class MainActivity extends AppCompatActivity {
 //                        new DividerDrawerItem(),
 //                        new SecondaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(FontAwesome.Icon.faw_github).withBadge("12+").withIdentifier(1)
 //                        new PrimaryDrawerItem()
-                        new SecondaryDrawerItem()
+
+                        new PrimaryDrawerItem()
                                 .withName(R.string.setting)
                                 .withIcon(FontAwesome.Icon.faw_gear)
                                 .withIdentifier(1),
                         new DividerDrawerItem(),
-                        new SecondaryDrawerItem()
+                        new PrimaryDrawerItem()
                                 .withName(R.string.aboutTheProgram)
                                 .withIcon(FontAwesome.Icon.faw_info_circle)
                                 .withIdentifier(2)
@@ -207,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         }
+
                     }
 
 
@@ -214,15 +227,18 @@ public class MainActivity extends AppCompatActivity {
 //                        startActivity(intent);
 
                 })
+
+
+
                 .build();
     }
 
     protected void onResume() {
         super.onResume();
-        int toolBarTextSize = Integer.parseInt(sp.getString("list", "1"));
-        if (toolBarTextSize != 1) {
-            mTextTab1.setTextSize(toolBarTextSize);
-            mTextTab2.setTextSize(toolBarTextSize);
+        int TimeTextSize = Integer.parseInt(sp.getString("list", "1"));
+        if (TimeTextSize != 1) {
+            mTextTab1.setTextSize(TimeTextSize);
+            mTextTab2.setTextSize(TimeTextSize);
         } else {
             mTextTab1.setTextSize(14);
             mTextTab2.setTextSize(14);

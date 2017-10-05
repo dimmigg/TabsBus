@@ -85,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
         setTitle(R.string.toolBar_136kmr);
         //боковое меню
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        initializeNavigationDrawer(toolbar);
+       initializeNavigationDrawer(toolbar);
 
         //настройки
         tvInfo = (TextView) findViewById(R.id.tvInfo);

@@ -58,6 +58,7 @@
                             android:foregroundGravity="center"
                             android:scrollbars="horizontal">
 
+
                             <TextView
                                 android:id="@+id/tvTab1"
                                 android:layout_width="match_parent"

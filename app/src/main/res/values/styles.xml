@@ -17,9 +17,14 @@
 
         <item name="colorAccent">@color/colorAccentDark</item>
         <item name="android:colorBackground">@color/colorWhite</item>
-        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:textColorPrimary">@color/material_drawer_dark_icons</item>
 
 
+    </style>
+
+
+    <style name="AppTheme.tab">
+        <item name="android:textColorPrimary">@color/test</item>
     </style>
 
 

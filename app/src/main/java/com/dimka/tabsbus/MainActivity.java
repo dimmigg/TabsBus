@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,13 +16,10 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.support.v7.widget.Toolbar;
-
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Badgeable;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
@@ -32,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextTab2;
     TextView tvInfo;
     SharedPreferences sp;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -90,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
        initializeNavigationDrawer(toolbar);
 
+
+
         //настройки
         tvInfo = (TextView) findViewById(R.id.tvInfo);
 
@@ -129,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(getBaseContext(), "tabId = " + tabId, Toast.LENGTH_SHORT).show();
 //            }
 //        });
-
 
         mTextTab1 = (TextView) findViewById(R.id.tvTab1);
         mTextTab2 = (TextView) findViewById(R.id.tvTab2);
@@ -239,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
         if (TimeTextSize != 1) {
             mTextTab1.setTextSize(TimeTextSize);
             mTextTab2.setTextSize(TimeTextSize);
+
         } else {
             mTextTab1.setTextSize(14);
             mTextTab2.setTextSize(14);

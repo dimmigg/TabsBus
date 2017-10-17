@@ -3,8 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="tabBudny">Будний</string>
-    <string name="tabVih">Выходной</string>
+    <string name="tabBudny">Рабочие дни</string>
+    <string name="tabVih">Выходные дни</string>
     <string name="setting">Настройки</string>
     <string name="aboutTheProgram">О программе</string>
     <string name="aboutTheProgramToast">Это приложение настолько крутое, что есть только у тебя и Майкла Джексона!</string>
@@ -76,5 +76,6 @@
         Марьянская: 5:25 5:45 6:00 6:15 6:30 6:45 7:02 7:20 7:40 8:00 8:20 8:40 9:00 9:20 9:40
         10:00 10:20 10:40 11:00 11:20 11:40 12:00 12:20 12:40 13:05 13:30 13:55 14:20 14:45
         15:10 15:35 16:00 16:20 16:40 17:00 17:20 17:40 18:00 18:30 19:00</string>
-    <string name="TextTime176Vih">в воскресенье другое расписание. Найдёшь - скажи =)</string>
+    <string name="TextTime176Vih">ТЭЦ: 5:55 7:25 9:05 10:45 12:15 15:25 17:05 18:45 \n\n
+    Пригородный: 6:35 8:15 9:55 11:25 13:05 16:15 17:55 19:35</string>
 </resources>

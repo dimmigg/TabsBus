@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextTab2;
     TextView tvInfo;
     SharedPreferences sp;
+//    Menu menu;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -148,6 +149,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        super.onCreateOptionsMenu(menu);
+//        // передаём ссылку на наш объект
+//        this.menu = menu;
+//        getMenuInflater().inflate(R.menu.navigation, menu);
+//        return true;
+//    }
+
     private void initializeNavigationDrawer(Toolbar toolbar) {
         drawerResult = new Drawer()
                 .withActivity(this)
@@ -244,6 +255,12 @@ public class MainActivity extends AppCompatActivity {
             mTextTab1.setTextSize(14);
             mTextTab2.setTextSize(14);
         }
+
+//        MenuItem item_dog = menu.findItem(R.id.navigation_114);
+
+        // делаем его невидимым
+//        item_dog.setVisible(false);
+//        R.id.navigation_114.
     }
 
 //    public boolean onCreateOptionsMenu(Menu menu) {

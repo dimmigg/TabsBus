@@ -41,22 +41,24 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
             switch (item.getItemId()) {
-                case R.id.navigation_136pos:
+ /*               case R.id.navigation_136pos:
                     setTitle(R.string.toolBar_136pos);
                     mTextTab1.setText(R.string.TextTime136pos);
                     mTextTab2.setText(R.string.TextTime136posVih);
 
                     return true;
+*/
                 case R.id.navigation_176:
                     setTitle(R.string.toolBar_176);
                     mTextTab1.setText(R.string.TextTime176);
                     mTextTab2.setText(R.string.TextTime176Vih);
                     return true;
-                case R.id.navigation_114:
+ /*               case R.id.navigation_114:
                     setTitle(R.string.toolBar_114);
                     mTextTab1.setText(R.string.TextTime114);
                     mTextTab2.setText(R.string.TextTime114Vih);
                     return true;
+  */
                 case R.id.navigation_136kmr:
                     setTitle(R.string.toolBar_136kmr);
                     mTextTab1.setText(R.string.TextTime136kmr);
@@ -136,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         mTextTab2 = (TextView) findViewById(R.id.tvTab2);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(R.id.navigation_136pos);
+        navigation.setSelectedItemId(R.id.navigation_136kmr);
     }
 
     @Override

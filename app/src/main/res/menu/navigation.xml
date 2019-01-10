@@ -12,13 +12,10 @@
         android:id="@+id/navigation_176"
         android:icon="@drawable/ic_176_96dp"
         android:title="@string/btnMenuPosTec" />
-    <!--<item
-        android:id="@+id/navigation_136pos"
-        android:enabled="true"
-        android:icon="@drawable/ic_136_96dp2"
-        android:title="@string/btnMenuPos" />
+    <!--
   <item
         android:id="@+id/navigation_114"
         android:icon="@drawable/ic_114_96dp"
-        android:title="@string/btnMenuCkh" />-->
+        android:title="@string/btnMenuCkr" />
+    -->
 </menu>

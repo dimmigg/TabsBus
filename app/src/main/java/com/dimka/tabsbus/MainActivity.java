@@ -9,6 +9,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tvInfo;
     SharedPreferences sp;
 //    Menu menu;
+
+
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -69,10 +72,12 @@ public class MainActivity extends AppCompatActivity {
                     mTextTab1.setText(R.string.TextTime157kmr);
                     mTextTab2.setText(R.string.TextTime157kmrVih);
                     return true;
-//                case R.id.navigation_114:
-//                    mTextTab1.setText("notifications");
-//                    mTextTab2.setText("notifications 2");
-//                    return true;
+       /*         case R.id.navigation_114:
+                    setTitle(R.string.toolBar_114);
+                    mTextTab1.setText(R.string.TextTime114);
+                    mTextTab2.setText(R.string.TextTime114Vih);
+                    return true;
+      */
             }
             return false;
         }

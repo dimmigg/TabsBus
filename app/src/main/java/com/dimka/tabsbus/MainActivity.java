@@ -72,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
                     mTextTab1.setText(R.string.TextTime157kmr);
                     mTextTab2.setText(R.string.TextTime157kmrVih);
                     return true;
-       /*         case R.id.navigation_114:
+           /*     case R.id.navigation_114:
                     setTitle(R.string.toolBar_114);
                     mTextTab1.setText(R.string.TextTime114);
                     mTextTab2.setText(R.string.TextTime114Vih);
                     return true;
-      */
+            */
             }
             return false;
         }
